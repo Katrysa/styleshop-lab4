@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uk" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог — STYLESHOP</title>
+  <meta name="description" content="Каталог одягу STYLESHOP: фільтри за категорією, розміром, кольором і ціною, пошук за назвою, сортування.">
+  <script>document.documentElement.className = "js";</script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти до основного змісту</a>
+<p class="info-bar">Безкоштовна доставка від 2 000 ₴ · Повернення протягом 14 днів</p>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">STYLESHOP</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span class="nav-toggle-icon" aria-hidden="true"></span><span class="visually-hidden">Меню</span></button>
+    <nav class="main-nav" id="main-nav" aria-label="Основна навігація"><ul><li><a href="index.html">Головна</a></li><li><a href="catalog.html" aria-current="page">Каталог</a></li><li><a href="product.html">Товар</a></li><li><a href="cart.html">Кошик</a></li><li><a href="contacts.html">Контакти</a></li></ul></nav>
+    <div class="header-actions">
+      <a href="catalog.html#search" aria-label="Пошук"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></a>
+      <a href="catalog.html?fav=1" aria-label="Обране"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.7 4 4.5 7.2 4.5c2 0 3.7 1.1 4.8 2.8 1.1-1.7 2.8-2.8 4.8-2.8 3.2 0 5.5 3.2 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></svg></a>
+      <a href="contacts.html" aria-label="Особистий кабінет"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 15-5 16 0"/></svg></a>
+      <a class="js-cart-link" href="cart.html" aria-label="Кошик"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 12H6z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg><span class="cart-count" hidden>0</span></a>
+    </div>
+  </div>
+</header>
+<main id="main">
+<nav class="container breadcrumbs" aria-label="Хлібні крихти"><ol><li><a href="index.html">Головна</a></li><li>Каталог</li></ol></nav>
+
+<div class="container">
+  <h1>Каталог</h1>
+  <div class="catalog-layout">
+    <aside aria-label="Фільтри товарів">
+      <form class="filters" id="filters" action="#" method="get">
+        <fieldset><legend>Категорія</legend>
+          <label class="check"><input type="checkbox" name="category" value="Футболки"> Футболки</label><label class="check"><input type="checkbox" name="category" value="Сорочки"> Сорочки</label><label class="check"><input type="checkbox" name="category" value="Штани"> Штани</label><label class="check"><input type="checkbox" name="category" value="Джинси"> Джинси</label><label class="check"><input type="checkbox" name="category" value="Сукні"> Сукні</label><label class="check"><input type="checkbox" name="category" value="Куртки"> Куртки</label><label class="check"><input type="checkbox" name="category" value="Светри"> Светри</label><label class="check"><input type="checkbox" name="category" value="Аксесуари"> Аксесуари</label>
+        </fieldset>
+        <fieldset><legend>Розмір</legend>
+          <div class="pill-list"><span><input class="visually-hidden" type="checkbox" id="fs-XS" name="size" value="XS"><label class="pill" for="fs-XS">XS</label></span><span><input class="visually-hidden" type="checkbox" id="fs-S" name="size" value="S"><label class="pill" for="fs-S">S</label></span><span><input class="visually-hidden" type="checkbox" id="fs-M" name="size" value="M"><label class="pill" for="fs-M">M</label></span><span><input class="visually-hidden" type="checkbox" id="fs-L" name="size" value="L"><label class="pill" for="fs-L">L</label></span><span><input class="visually-hidden" type="checkbox" id="fs-XL" name="size" value="XL"><label class="pill" for="fs-XL">XL</label></span></div>
+        </fieldset>
+        <fieldset><legend>Колір</legend>
+          <label class="check"><input type="checkbox" name="color" value="Молочний"> Молочний</label><label class="check"><input type="checkbox" name="color" value="Пісочний"> Пісочний</label><label class="check"><input type="checkbox" name="color" value="Графітовий"> Графітовий</label><label class="check"><input type="checkbox" name="color" value="Індиго"> Індиго</label><label class="check"><input type="checkbox" name="color" value="Оливковий"> Оливковий</label><label class="check"><input type="checkbox" name="color" value="Теракотовий"> Теракотовий</label>
+        </fieldset>
+        <fieldset><legend>Ціна, ₴</legend>
+          <div class="price-range"><label class="visually-hidden" for="pmin">Від</label><input type="number" id="pmin" name="min" min="0" placeholder="від"><span aria-hidden="true">—</span><label class="visually-hidden" for="pmax">До</label><input type="number" id="pmax" name="max" min="0" placeholder="до"></div>
+          <p class="field-error" id="price-error" role="alert" hidden></p>
+        </fieldset>
+        <fieldset><legend>Показати</legend>
+          <label class="check"><input type="checkbox" name="fav" value="1"> Лише обране</label>
+        </fieldset>
+        <button class="btn btn--block" type="submit">Застосувати</button>
+        <button class="btn btn--outline btn--block" style="margin-top:.6rem" type="reset">Скинути фільтри</button>
+      </form>
+    </aside>
+    <section aria-labelledby="res-title">
+      <h2 id="res-title" class="visually-hidden">Список товарів</h2>
+      <div class="catalog-toolbar">
+        <form role="search" class="inline-form" action="#" method="get" id="search" style="flex:1 1 18rem">
+          <label class="visually-hidden" for="q">Пошук товарів за назвою</label>
+          <input type="search" id="q" name="q" placeholder="Пошук за назвою або категорією">
+          <button class="btn" type="submit">Знайти</button>
+        </form>
+        <div class="select-inline"><label for="sort">Сортування</label>
+          <select id="sort" name="sort"><option value="default">За замовчуванням</option><option value="price-asc">Ціна: від низької</option><option value="price-desc">Ціна: від високої</option><option value="name">За назвою</option></select></div>
+      </div>
+      <p class="muted" id="result-count" role="status">Знайдено: 8 товарів</p>
+      <ul class="product-grid" id="product-list"><li><article class="product-card" data-id="tshirt">
+  <span class="badge">Новинка</span>
+  <button class="fav" type="button" data-id="tshirt" aria-pressed="false" aria-label="Додати до обраного: Базова футболка oversize"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.7 4 4.5 7.2 4.5c2 0 3.7 1.1 4.8 2.8 1.1-1.7 2.8-2.8 4.8-2.8 3.2 0 5.5 3.2 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></svg></button>
+  <figure><img src="img/tshirt-1.svg" alt="Базова футболка oversize, колір молочний" width="400" height="500" loading="lazy"></figure>
+  <h3><a href="product.html?id=tshirt">Базова футболка oversize</a></h3>
+  <p class="meta">Футболки · Молочний</p>
+  <p class="price">790 ₴</p>
+</article></li><li><article class="product-card" data-id="shirt">
+  
+  <button class="fav" type="button" data-id="shirt" aria-pressed="false" aria-label="Додати до обраного: Лляна сорочка"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.7 4 4.5 7.2 4.5c2 0 3.7 1.1 4.8 2.8 1.1-1.7 2.8-2.8 4.8-2.8 3.2 0 5.5 3.2 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></svg></button>
+  <figure><img src="img/shirt-1.svg" alt="Лляна сорочка, колір пісочний" width="400" height="500" loading="lazy"></figure>
+  <h3><a href="product.html?id=shirt">Лляна сорочка</a></h3>
+  <p class="meta">Сорочки · Пісочний</p>
+  <p class="price">1 890 ₴</p>
+</article></li><li><article class="product-card" data-id="pants">
+  
+  <button class="fav" type="button" data-id="pants" aria-pressed="false" aria-label="Додати до обраного: Широкі штани"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.7 4 4.5 7.2 4.5c2 0 3.7 1.1 4.8 2.8 1.1-1.7 2.8-2.8 4.8-2.8 3.2 0 5.5 3.2 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></svg></button>
+  <figure><img src="img/pants-1.svg" alt="Широкі штани, колір графітовий" width="400" height="500" loading="lazy"></figure>
+  <h3><a href="product.html?id=pants">Широкі штани</a></h3>
+  <p class="meta">Штани · Графітовий</p>
+  <p class="price">1 650 ₴</p>
+</article></li><li><article class="product-card" data-id="jeans">
+  <span class="badge">Хіт</span>
+  <button class="fav" type="button" data-id="jeans" aria-pressed="false" aria-label="Додати до обраного: Прямі джинси"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.7 4 4.5 7.2 4.5c2 0 3.7 1.1 4.8 2.8 1.1-1.7 2.8-2.8 4.8-2.8 3.2 0 5.5 3.2 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></svg></button>
+  <figure><img src="img/jeans-1.svg" alt="Прямі джинси, колір індиго" width="400" height="500" loading="lazy"></figure>
+  <h3><a href="product.html?id=jeans">Прямі джинси</a></h3>
+  <p class="meta">Джинси · Індиго</p>
+  <p class="price">2 190 ₴</p>
+</article></li><li><article class="product-card" data-id="dress">
+  
+  <button class="fav" type="button" data-id="dress" aria-pressed="false" aria-label="Додати до обраного: Сукня-міді"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.7 4 4.5 7.2 4.5c2 0 3.7 1.1 4.8 2.8 1.1-1.7 2.8-2.8 4.8-2.8 3.2 0 5.5 3.2 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></svg></button>
+  <figure><img src="img/dress-1.svg" alt="Сукня-міді, колір оливковий" width="400" height="500" loading="lazy"></figure>
+  <h3><a href="product.html?id=dress">Сукня-міді</a></h3>
+  <p class="meta">Сукні · Оливковий</p>
+  <p class="price">2 490 ₴</p>
+</article></li><li><article class="product-card" data-id="jacket">
+  <span class="badge">Новинка</span>
+  <button class="fav" type="button" data-id="jacket" aria-pressed="false" aria-label="Додати до обраного: Куртка-бомбер"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.7 4 4.5 7.2 4.5c2 0 3.7 1.1 4.8 2.8 1.1-1.7 2.8-2.8 4.8-2.8 3.2 0 5.5 3.2 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></svg></button>
+  <figure><img src="img/jacket-1.svg" alt="Куртка-бомбер, колір теракотовий" width="400" height="500" loading="lazy"></figure>
+  <h3><a href="product.html?id=jacket">Куртка-бомбер</a></h3>
+  <p class="meta">Куртки · Теракотовий</p>
+  <p class="price">3 450 ₴</p>
+</article></li><li><article class="product-card" data-id="sweater">
+  
+  <button class="fav" type="button" data-id="sweater" aria-pressed="false" aria-label="Додати до обраного: В’язаний светр"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.7 4 4.5 7.2 4.5c2 0 3.7 1.1 4.8 2.8 1.1-1.7 2.8-2.8 4.8-2.8 3.2 0 5.5 3.2 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></svg></button>
+  <figure><img src="img/sweater-1.svg" alt="В’язаний светр, колір пісочний" width="400" height="500" loading="lazy"></figure>
+  <h3><a href="product.html?id=sweater">В’язаний светр</a></h3>
+  <p class="meta">Светри · Пісочний</p>
+  <p class="price">1 990 ₴</p>
+</article></li><li><article class="product-card" data-id="bag">
+  
+  <button class="fav" type="button" data-id="bag" aria-pressed="false" aria-label="Додати до обраного: Шопер із канвасу"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.7 4 4.5 7.2 4.5c2 0 3.7 1.1 4.8 2.8 1.1-1.7 2.8-2.8 4.8-2.8 3.2 0 5.5 3.2 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></svg></button>
+  <figure><img src="img/bag-1.svg" alt="Шопер із канвасу, колір пісочний" width="400" height="500" loading="lazy"></figure>
+  <h3><a href="product.html?id=bag">Шопер із канвасу</a></h3>
+  <p class="meta">Аксесуари · Пісочний</p>
+  <p class="price">450 ₴</p>
+</article></li></ul>
+      <div class="empty-box" id="empty" hidden>
+        <h3>Нічого не знайдено</h3>
+        <p>Спробуйте змінити пошуковий запит або прибрати частину фільтрів.</p>
+        <button class="btn btn--outline" type="button" id="empty-reset">Скинути все</button>
+      </div>
+    </section>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <section aria-labelledby="f1"><h3 id="f1">STYLESHOP</h3><p class="muted">Інтернет-магазин повсякденного одягу з мінімалістичним оформленням.</p></section>
+      <nav aria-label="Навігація підвалу"><h3>Магазин</h3><ul><li><a href="catalog.html">Каталог</a></li><li><a href="cart.html">Кошик</a></li><li><a href="contacts.html">Контакти</a></li></ul></nav>
+      <section aria-labelledby="f3"><h3 id="f3">Допомога</h3><ul><li><a href="contacts.html#delivery">Доставка й оплата</a></li><li><a href="contacts.html#delivery">Повернення</a></li></ul></section>
+      <section aria-labelledby="f4"><h3 id="f4">Контакти</h3><address><ul><li><a href="tel:+380441234567">+38 (044) 123-45-67</a></li><li><a href="mailto:hello@styleshop.example">hello@styleshop.example</a></li><li class="muted">Київ, вул. Хрещатик, 10</li></ul></address></section>
+    </div>
+    <p class="footer-bottom muted">© 2026 STYLESHOP. Навчальний проєкт, Лабораторна робота № 4.</p>
+  </div>
+</footer>
+<script src="js/data.js" defer></script>
+<script src="js/store.js" defer></script>
+<script src="js/ui.js" defer></script>
+<script src="js/forms.js" defer></script>
+<script src="js/catalog.js" defer></script>
+</body>
+</html>
